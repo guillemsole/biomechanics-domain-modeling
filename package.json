@@ -1,0 +1,43 @@
+{
+  "name": "biomechanics-domain-modeling",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "pretest": "npm run build",
+    "test": "mocha --ui bdd --recursive ./build/test",
+    "build": "rm -rf build/ && tsc",
+    "test:cov": "nyc --reporter=lcov --reporter=text-lcov npm t && nyc report --reporter=text-lcov",
+    "test:coveralls": "npm run test:cov | coveralls"
+  },
+  "contributors": [
+    {
+      "name": "Guillem Solé",
+      "email": "guillemsolecubilo@gmail.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/guillemsole/biomechanics-domain-modeling.git"
+  },
+  "license": "APACHE-2.0",
+  "dependencies": {
+    "@types/node": "^9.3.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.0.4",
+    "@types/mocha": "^2.2.44",
+    "chai": "^4.1.2",
+    "coveralls": "^3.0.0",
+    "mocha": "5.1.1",
+    "nyc": "^11.3.0",
+    "ts-node": "6.0.2",
+    "ts-mockito": "^2.2.8",
+    "tslint": "^5.8.0",
+    "typescript": "^2.6.2"
+  },
+  "nyc": {
+    "exclude": [
+      "**/*.spec.js"
+    ]
+  }
+}
