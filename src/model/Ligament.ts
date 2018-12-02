@@ -16,7 +16,7 @@ export class Ligament {
         this.maxExtension = maxExtension;
     }
 
-    allowsMovementTo(movementAngle: number): boolean { // TODO: change movement angle to model MovementAngle
+    allowsMovementTo(movementAngle: number): boolean { // TODO: change movement position to model MovementAngle
         return movementAngle >= this.minExtension && movementAngle <= this.maxExtension;
     }
 
