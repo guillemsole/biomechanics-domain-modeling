@@ -7,7 +7,7 @@ export enum MovementType { // TODO: or MotionType
 
 export class Movement {
     constructor(public readonly type: MovementType,
-                public readonly angle: number) {
+                public readonly position: number) {
 
     }
 }
