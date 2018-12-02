@@ -1,12 +1,7 @@
-export enum MovementType { // TODO: or MotionType
-    FLEXIONEXTENSION,
-    ABDUCTIONADDUCTION,
-    ELEVATIONDEPRESSION,
-    ROTATION,
-}
+import {MotionType} from './MotionType';
 
 export class Movement {
-    constructor(public readonly type: MovementType,
+    constructor(public readonly type: MotionType,
                 public readonly position: number) {
 
     }

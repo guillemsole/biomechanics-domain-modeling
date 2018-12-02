@@ -1,0 +1,6 @@
+export enum MotionType { // TODO: or MotionType
+    FLEXIONEXTENSION,
+    ABDUCTIONADDUCTION,
+    ELEVATIONDEPRESSION,
+    ROTATION,
+}

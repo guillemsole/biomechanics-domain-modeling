@@ -1,10 +1,11 @@
 import {JointMotion} from './JointMotion';
-import {Movement, MovementType} from './Movement';
+import {MotionType} from './MotionType';
+import {Movement} from './Movement';
 
 export class Joint {
-    private _jointMotions: Map<MovementType, JointMotion>;
+    private _jointMotions: Map<MotionType, JointMotion>;
     constructor(public readonly id: string,
-                jointMotions: Map<MovementType, JointMotion>) {
+                jointMotions: Map<MotionType, JointMotion>) {
         if (jointMotions.size === 0) {
             throw new Error('Joint Motions must be at least 1');
         }
@@ -12,7 +13,7 @@ export class Joint {
 
     }
 
-    get jointMotions(): Map<MovementType, JointMotion> {
+    get jointMotions(): Map<MotionType, JointMotion> {
         return this._jointMotions;
     }
 

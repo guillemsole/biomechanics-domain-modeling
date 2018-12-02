@@ -1,5 +1,4 @@
 import {Ligament} from './Ligament';
-import {Movement} from './Movement';
 
 export class JointMotion {
     // TODO: si té estat, ha de tenir id. Els value objects son stateless? Un value object pot contenir un value object
