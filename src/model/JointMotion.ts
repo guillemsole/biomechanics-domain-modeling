@@ -8,6 +8,9 @@ export class JointMotion {
     private _currentPosition: number;
     constructor(public readonly ligament: Ligament,
                 currentPosition: number) {
+        if (!this.ligament.allowsMovementTo(currentPosition)) {
+            throw new Error('Cannot perform this movement');
+        }
         this._currentPosition = currentPosition;
     }
 
@@ -15,11 +18,12 @@ export class JointMotion {
         return this._currentPosition;
     }
 
-    move(movement: Movement) {
-        if (!this.ligament.allowsMovementTo(movement.angle)) {
+    move(position: number) {
+        if (!this.ligament.allowsMovementTo(position)) {
             throw new Error('Cannot perform this movement');
         }
-        this._currentPosition = movement.angle;
+        this._currentPosition = position;
         // FIRE domain event;
     }
+
 }
