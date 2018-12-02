@@ -11,6 +11,10 @@ export class JointMotion {
         this._currentPosition = currentPosition;
     }
 
+    get currentPosition(): number {
+        return this._currentPosition;
+    }
+
     move(movement: Movement) {
         if (!this.ligament.allowsMovementTo(movement.angle)) {
             throw new Error('Cannot perform this movement');
